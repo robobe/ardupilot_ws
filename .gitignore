@@ -1,0 +1,51 @@
+eeprom.bin
+
+# ROS2 build, install, and log directories
+build/
+install/
+log/
+logs/
+# Colcon build artifacts
+.colcon/
+.colcon_install_layout
+
+# ROS2 workspace overlay files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+
+# ROS2 launch and parameter files (user-specific)
+*.launch.py~
+*.launch~
+*.params.yaml~
+
+# VSCode settings (optional)
+.vscode/
+
+# CMake and catkin tools
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+catkin_generated/
+devel/
+env.sh
+setup.sh
+.bashrc
+.bash_profile
+
+# Python virtual environments
+venv/
+.env/
+ENV/
+env/
+
+# Misc
+*.log
+*.bak
+*.orig
+*.tmp
+.DS_Store
+Thumbs.db

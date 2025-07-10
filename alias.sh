@@ -1,0 +1,2 @@
+alias sitl_gz="arducopter --model copter --defaults /workspace/src/ardupilot_bringup/params/copter-gz.param  -I0"
+alias sitl="arducopter --model copter --defaults /workspace/src/ardupilot_bringup/params/copter.param  -I0"
