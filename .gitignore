@@ -1,5 +1,8 @@
+*.tlog*
+*.dat
 eeprom.bin
-
+*.out
+.gz
 # ROS2 build, install, and log directories
 build/
 install/
@@ -49,3 +52,5 @@ env/
 *.tmp
 .DS_Store
 Thumbs.db
+.gitignore
+mav_6_1.parm

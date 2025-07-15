@@ -1,0 +1,11 @@
+/mavros/**:
+  ros__parameters:
+    plugin_denylist:
+      # common
+      - '*'
+
+    plugin_allowlist:
+      - sys_time
+      - sys_status
+      - command
+      - terrain

@@ -10,7 +10,8 @@ services:
       - /dev/dri:/dev/dri 
       - /dev/nvidia0:/dev/nvidia0 
       - /dev/nvidiactl:/dev/nvidiactl 
-      - /dev/nvidia-modeset:/dev/nvidia-modeset 
+      - /dev/nvidia-modeset:/dev/nvidia-modeset
+      - .gz/:/home/ros/.gz/
     deploy:
       resources:
         reservations:
@@ -25,5 +26,9 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
-    devices:
-      - /dev/dri:/dev/dri
+    # devices:
+    #   - /dev/serial/by-id/usb-ArduPilot_fmuv2_430032000551353532333634-if00:/dev/ttyPIXHawk
+    # group_add:
+    #   - dialout
+    # device_cgroup_rules:
+    #   - 'c 166:* rmw'

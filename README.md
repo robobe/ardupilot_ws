@@ -3,18 +3,46 @@
 vcs import src < repositories.yaml
 ```
 
+## SITL
+
+```bash
+/home/user/git/ardupilot/build/sitl/bin/arducopter --model + --speedup 1 --slave 0 --defaults Tools/autotest/default_params/copter.parm --sim-address=127.0.0.1 -I0
 ```
-./arducopter --model copter
 
-./arducopter --model copter --defaults copter.parm  -I0
+```bash title="Run SITL without gazebo"
+/workspace/src/ardupilot_bringup/bin/arducopter --model + \
+--speedup 1 \
+--slave 0 \
+--defaults /workspace/src/ardupilot_bringup/params/copter_default.param \
+--sim-address=127.0.0.1 \
+-I0
 ```
 
 
+## MAVROS
+```bash title="mavros python launch"
+ ros2 launch ardupilot_bringup mavros.launch.py fcu_url:=tcp://:5760@127.0.0.1:5760 gcs_url:=udp://@127.0.0.1:14560 
+```
 
+```
+ros2 launch mavros node.launch \
+fcu_url:=tcp://:5760@127.0.0.1:5760 \
+gcs_url:=udp://@127.0.0.1:14560 \
+tgt_system:=1 \
+tgt_component:=1 \
+pluginlists_yaml:=/workspace/src/ardupilot_bringup/config/plugins.yaml \
+config_yaml:=/workspace/src/ardupilot_bringup/config/config.yaml
+```
 
 ```
 #mavros
-udp://:14550@ gcs_url:=udp://:14550@
+ 
+ros2 launch mavros apm.launch fcu_url:=udp://:14550@ 
+ros2 launch mavros apm.launch fcu_url:=/dev/ttyACM0:115200@
+ros2 launch mavros apm.launch fcu_url:=tcp://:5760@ 
+pluginlists_yaml:=/workspace/src/ardupilot_bringup/config/plugins.yaml
+config_yaml:=/workspace/src/ardupilot_bringup/config/config.yaml
+
 ```
 
 ```bash
