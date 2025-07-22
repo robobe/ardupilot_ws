@@ -1,4 +1,7 @@
 
+"""
+Launch Ardupilot copter SITL with gimbal simulation.
+"""
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess
 from ament_index_python.packages import get_package_share_directory
@@ -28,7 +31,7 @@ def generate_launch_description():
     sitl = ExecuteProcess(
             cmd=[sitl_bin, '--model', model, '--speedup', '1', '--slave', '0',
                  '--defaults', param_path,
-                 '--sim-address', '127.0.0.1', '-I0'],
+                 '--sim-address', '127.0.0.1', '-I0', '--gimbal'],
             output='screen'
         )
     

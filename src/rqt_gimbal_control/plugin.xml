@@ -1,0 +1,15 @@
+<library path="src">
+<class name="demo" type="rqt_gimbal_control.gimbal_control_plugin.GimbalControl" base_class_type="rqt_gui_py::Plugin">
+    <description>
+        Gimbal control plugin for ROS.
+    </description>
+    <qtgui>
+        <group>
+            <label>Gimbal control</label>
+        </group>
+        <label>Gimbal control plugin for ROS.</label>
+        <icon type="theme">system-help</icon>
+        <statustip>Simple demo plugin.</statustip>
+    </qtgui>
+</class>
+</library>

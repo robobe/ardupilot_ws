@@ -48,3 +48,13 @@ RUN apt-get update \
         gstreamer-1.0 \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+
+# region python and pip
+RUN apt-get update \
+&& apt-get -y install --no-install-recommends \
+    python3-pip \
+&& apt-get clean -y \
+&& rm -rf /var/lib/apt/lists/*
+# end region
+
+RUN pip3 install --break-system-packages pymavlink

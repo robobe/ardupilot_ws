@@ -8,4 +8,4 @@
       - sys_time
       - sys_status
       - command
-      - terrain
+      - gimbal_control

@@ -4,6 +4,7 @@
     "service": "ros",
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
+    // "postCreateCommand": "./.devcontainer/setup.sh",
     "customizations": {
       "vscode": {
         "extensions": [
@@ -17,7 +18,8 @@
             "streetsidesoftware.code-spell-checker",
             "mhutchie.git-graph",
             "dlech.chmod",
-            "smilerobotics.urdf"
+            "smilerobotics.urdf",
+            "google.geminicodeassist"
         ],
         "settings": {}
       }
